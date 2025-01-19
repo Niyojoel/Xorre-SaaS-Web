@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react"
 import {Link as LinkScroll} from "react-scroll" 
 import clsx from "clsx"
+import { MoonIcon, SunDimIcon } from "lucide-react"
 
 type NavLinkProps = {
   title: string,
   offset?: number,
 }
 
-const Header = () => {
+type HeaderProps = {
+  themeMode: string,
+  toggleThemeMode: ()=> void
+}
+
+const Header = ({themeMode, toggleThemeMode}: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -23,14 +29,14 @@ const Header = () => {
   }, [])
 
   const NavLink = ({title, offset = 0}: NavLinkProps)=> (
-    <LinkScroll to={title} offset={offset} onClick={()=> setIsOpen(false)} spy smooth activeClass="nav-active" className="base-bold text-p4 capitalize transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5" >{title}</LinkScroll>
+    <LinkScroll to={title} offset={offset} onClick={()=> setIsOpen(false)} spy smooth activeClass="nav-active" className="base-bold text-[var(--p4h)] capitalize transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5" >{title}</LinkScroll>
   )
 
   return (
-    <header className={clsx("fixed top-0 left-0 z-50 w-full py-10 transition-all duration-300 max-lg:py-4", hasScrolled && "bg-black-100 py-2 backdrop-blur-[8px]")}>
+    <header className={clsx("fixed top-0 left-0 z-50 w-full py-10 transition-all duration-300 max-lg:py-4", hasScrolled && "headerbg py-2 backdrop-blur-[8px]")}>
       <div className="container flex h-14 items-center max-lg:px-5">
         <a className="lg:hidden flex-1 cursor-pointer z-2">
-          <img src="/images/xora.svg" alt="logo" width={115} height={55}/>
+          <img src="/images/xorre.svg" alt="logo" width={115} height={55}/>
         </a>
 
         <div className={clsx("w-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:bg-s2 max-lg:opacity-0", isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none")}>
@@ -38,13 +44,13 @@ const Header = () => {
             <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
               <ul className="flex max-lg:block max-lg:px-12">
                 <li className="nav-li">
-                  <NavLink title="features" offset={-100}/>
+                  <NavLink title="features" offset={0}/>
                   <div className="dot"></div>
                   <NavLink title="pricing"/>
                 </li>                
                 <li className="nav-logo">
                   <LinkScroll to="hero" offset={-250} spy smooth className="max-lg:hidden transition-transform  duration-500 cursor-pointer">
-                    <img src="/images/xora.svg" width={160} height={55} alt="logo"/>
+                    <img src="/images/xorre.svg" width={160} height={55} alt="logo"/>
                   </LinkScroll>
                 </li>   
                 <li className="nav-li">
@@ -63,6 +69,10 @@ const Header = () => {
         <button className="lg:hidden z-2 size-10 border-2 border-s4/25 rounded-full flex justify-center items-center" onClick={() => setIsOpen(prevState => !prevState)}>
           <img src={`/images/${ isOpen ? "close" : "magic"}.svg`}  alt="nav-toggle" className="size-1/2 object-contain"/>
         </button>
+        <button data-theme-toggle aria-label="Toggle theme" onClick={toggleThemeMode} className=" flex items-center justify-center lg:ml-20 ml-5 border-3 border-p2 size-10 rounded-full">
+          {themeMode === "light" ? <MoonIcon stroke="#2ef2ff" size={23} fill="black"/> : <SunDimIcon stroke="#2ef2ff" fill="white" size={30}/>}
+        </button>
+        
       </div>
     </header>
   )
