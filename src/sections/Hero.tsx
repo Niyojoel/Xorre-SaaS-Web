@@ -22,7 +22,7 @@ const Hero = ({themeStyle}: {themeStyle:(dark: string, light: string) => string}
             <div className="bg_container pointer-events-none h-[150vh]">
               <div className="relative h-[100vh] hero-img_res">
                   <img src="/images/hero.png" alt="hero-image" className="w-[1230px] max-xl:w-[1100px] max-lg:size-[1000px] max-sm:size-[900px] max-lg:h-auto"/>
-                  <div className={clsx("bg-shadow-container-xl max-lg:bg-shadow-container-md absolute", themeStyle("hidden", "top-0 right-0 w-[120vw] max-xl:w-[1100px] max-lg:size-[1000px] max-sm:size-[900px] h-[160vh] max-lg:h-[150vh]"))}></div>
+                  <div className={clsx("bg-shadow-container-xl max-lg:bg-shadow-container-md absolute", themeStyle("hidden", "top-0 right-0 w-[120vw] max-xl:w-[1300px] max-lg:size-[1000px] max-sm:size-[900px] h-[160vh] max-lg:h-[150vh]"))}></div>
               </div>
             </div>
         </div>

@@ -174,7 +174,7 @@
   }
 
   .bg_container {
-    @apply absolute w-[calc(100vw-20px)] max-xl:w-[calc(100vw-20px)] max-lg:w-[calc(100vw-19px)] top-0 left-0 overflow-hidden;
+    @apply absolute w-[calc(100vw-20px)] max-lg:w-[calc(100vw-19px)] max-md:w-[calc(100vw-17px)] max-[770px]:w-[100vw] top-0 left-0 overflow-hidden;
   }
 
   .bg-shadow-container-xl {
