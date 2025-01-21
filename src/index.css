@@ -11,6 +11,7 @@
     --g7: linear-gradient(#1b275a, #0e1434);
     --g1: linear-gradient(rgba(196, 203, 245, 0.5), transparent);
     --s1: #0c1838;
+    --s2t: #0c1838;
     --s2: #0c1838;
     --icon: #080d270d;
     --p3: #c8ea80;
@@ -26,6 +27,7 @@
     --g7: linear-gradient(rgb(114, 122, 155), rgb(115, 124, 171));
     --g1: linear-gradient(rgba(196, 201, 226, 0.5), transparent);
     --s1: #828aa8;
+    --s2t: #eaedff;
     --s2: #0c1838;
     --icon: #080d270d;
     --p3: #c0e76c;
@@ -34,7 +36,6 @@
     --p4h: #eaedff;
     --p5: #29315f;
     --p5s: #c4cbf5;
-
   }
 
   html {
@@ -176,6 +177,14 @@
     @apply absolute w-[calc(100vw-20px)] max-xl:w-[calc(100vw-20px)] max-lg:w-[calc(100vw-19px)] top-0 left-0 overflow-hidden;
   }
 
+  .bg-shadow-container-xl {
+    background: radial-gradient( transparent 25%, var(--htmlBcg) 70%);
+  }
+
+  .bg-shadow-container-md {
+    background: radial-gradient( transparent 30%, var(--htmlBcg) 70%);
+  }
+
   .video_container {
     @apply fixed w-[100vw] top-0 left-0 h-[100vh] overflow-hidden;
   }
@@ -307,11 +316,11 @@
   /* START of Testimonials */
 
   .testimonials_head-res {
-    @apply max-2xl:mr-6 max-xl:mr-3 max-lg:mx-auto max-lg:mb-36 max-lg:max-w-330 max-lg:text-center max-md:mb-24 max-md:max-w-52;
+    @apply max-2xl:mr-6 max-xl:mr-3 max-lg:mx-auto max-lg:mb-24 max-lg:max-w-330 max-lg:text-center max-md:mb-8 max-md:max-w-52;
   }
 
   .testimonials_inner-before {
-    @apply before:pointer-events-none before:absolute before:-top-28 before:left-[calc(50%-1px)] before:h-[calc(100%+218px)] before:w-0.5 before:bg-s2 before:content-[''] before:max-lg:top-0 before:max-lg:h-full before:max-md:hidden;
+    @apply before:pointer-events-none before:absolute before:-top-28 before:left-[calc(50%-1px)] before:h-[calc(100%+218px)] before:w-0.5 before:bg-[var(--s2)] before:content-[''] before:max-lg:top-0 before:max-lg:h-full before:max-md:hidden;
   }
 
   .testimonials_inner-after {

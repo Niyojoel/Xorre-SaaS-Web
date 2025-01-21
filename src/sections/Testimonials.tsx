@@ -1,7 +1,7 @@
 import {TestimonialItem} from "../components"
 import { testimonials } from "../constants"
 
-const Testimonials = () => {
+const Testimonials = ({themeStyle}: {themeStyle: (dark:string, light:string)=> string}) => {
   const halfLength= Math.floor(testimonials.length/2)
 
   return (
@@ -15,15 +15,15 @@ const Testimonials = () => {
                     Words from our fans
                 </h3>
             </div>
-            <div className="testimonials_inner-after testimonials_inner-before relative -my-12 mr-3 flex items-start max-lg:static max-md:block overflow-hidden">
+            <div className="testimonials_inner-before relative -my-12 mr-3 flex items-start max-lg:static max-md:block overflow-hidden">
                 <div className="testimonials_group-after flex-50">
                     {testimonials.slice(0, halfLength).map(testimonial=> (
-                        <TestimonialItem key={testimonial.id} item={testimonial} containerClasses="last:after:hidden last:after:max-md:block"/> 
+                        <TestimonialItem key={testimonial.id} item={testimonial} containerClasses="last:after:hidden last:after:max-md:block after:right-0 max-lg:after:-right-1"/> 
                     ))}
                 </div>
                 <div className="flex-50">
                     {testimonials.slice(halfLength).map(testimonial=> (
-                        <TestimonialItem key={testimonial.id} item={testimonial} containerClasses="last:after:hidden after:right-auto after:left-0 after:max-md:-left-4 md:px-12"/> 
+                        <TestimonialItem key={testimonial.id} item={testimonial} containerClasses="last:after:hidden after:right-auto after:left-0 after:max-md:-left-4 md:px-12 after:left-0 max-lg:after:left-2"/> 
                     ))}
                 </div>
             </div>

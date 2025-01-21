@@ -40,7 +40,7 @@ function App() {
         theme={themeMode as string}
       />
       <Faq themeStyle={darkLightStyles}/>
-      <Testimonials/>
+      <Testimonials themeStyle={darkLightStyles}/>
       <Download 
         setDisplayVideo={setDisplayVideo} 
         theme={themeMode as string} themeStyle={darkLightStyles}

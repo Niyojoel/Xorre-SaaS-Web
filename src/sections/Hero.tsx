@@ -1,5 +1,6 @@
 import {Element, Link as LinkScroll} from "react-scroll"
 import {Button} from "../components"
+import clsx from "clsx"
 
 const Hero = ({themeStyle}: {themeStyle:(dark: string, light: string) => string}) => {
   return (
@@ -10,8 +11,8 @@ const Hero = ({themeStyle}: {themeStyle:(dark: string, light: string) => string}
                 <div className="caption small-2 uppercase">
                     Video Editing
                 </div>
-                <h1 className="mb-6 h1 text-[var(--p4w)] uppercase max-lg:mb-7 max-lg:h2 max-md:mb-4 max-md:text-5xl max-md:leading-12">Amazingly Simple</h1>
-                <p className="max-w-440 mb-14 body-1 max-md:mb-10">
+                <h1 className="mb-6 h1 text-[var(--p4w)] max-lg:text-[var(--p4)] uppercase max-lg:mb-7 max-lg:h2 max-md:mb-4 max-md:text-5xl max-md:leading-12">Amazingly Simple</h1>
+                <p className="max-w-440 mb-14 body-1 max-md:mb-10 max-lg:text-[var(--p4w)]">
                     We designed XORRE AI Video Editor to be easy to use, quick to learn and surprisingly powerful.
                 </p>
                 <LinkScroll to='features' offset={0} spy smooth>
@@ -19,8 +20,9 @@ const Hero = ({themeStyle}: {themeStyle:(dark: string, light: string) => string}
                 </LinkScroll>
             </div>
             <div className="bg_container pointer-events-none h-[150vh]">
-              <div className="relative h-[100vh] pointer-events-none hero-img_res">
+              <div className="relative h-[100vh] hero-img_res">
                   <img src="/images/hero.png" alt="hero-image" className="w-[1230px] max-xl:w-[1100px] max-lg:size-[1000px] max-sm:size-[900px] max-lg:h-auto"/>
+                  <div className={clsx("bg-shadow-container-xl max-lg:bg-shadow-container-md absolute", themeStyle("hidden", "top-0 right-0 w-[120vw] max-xl:w-[1100px] max-lg:size-[1000px] max-sm:size-[900px] h-[160vh] max-lg:h-[150vh]"))}></div>
               </div>
             </div>
         </div>
