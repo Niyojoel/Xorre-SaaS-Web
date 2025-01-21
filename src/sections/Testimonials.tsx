@@ -1,7 +1,7 @@
 import {TestimonialItem} from "../components"
 import { testimonials } from "../constants"
 
-const Testimonials = ({themeStyle}: {themeStyle: (dark:string, light:string)=> string}) => {
+const Testimonials = () => {
   const halfLength= Math.floor(testimonials.length/2)
 
   return (

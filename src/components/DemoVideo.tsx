@@ -1,6 +1,6 @@
 import { X } from "lucide-react"
 import clsx from "clsx"
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 
 export type displayVideoProps = {
   displayVideo: boolean, 

@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import CountUp from 'react-countup';
 import { plans } from '../constants';
 import { Button } from '../components';
-import { Check, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 type PricingProps = {
   themeStyle: (dark: string, light: string) => string,
