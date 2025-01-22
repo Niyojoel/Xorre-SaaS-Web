@@ -36,7 +36,7 @@ const Download = ({setDisplayVideo, theme, themeStyle}: DownloadProps) => {
               <ul className="flex flex-wrap items-center gap-6 max-md:gap-4">
                 {links.map(({id, url, icon})=> (
                   <li key={id} className='download_tech-link download_tech-link_last-before download_tech-link_last-after'>
-                    <a href={url} download="favicon.ico" className='size-22 max-lg:size-20 max-md:size-16 max-[770px]:size-12 download_tech-icon_before relative flex items-center justify-center rounded-half border-2 border-s3 bg-s1 transition-borderColor duration-500'>
+                    <a href={url} download="favicon.ico" className='size-22 max-lg:size-20 max-md:size-16 max-md:size-12 download_tech-icon_before relative flex items-center justify-center rounded-half border-2 border-s3 bg-s1 transition-borderColor duration-500'>
                       <span className='absolute -top-2 rotate-90 max-sm:hidden'>
                         <Marker />
                       </span>
