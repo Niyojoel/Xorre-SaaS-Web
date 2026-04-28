@@ -22,8 +22,8 @@
   }
 
   [data-theme="light"] {
-    --htmlBcg: rgb(170, 175, 195);
-    --headerbg: #0c1838;
+    --htmlBcg: rgb(184, 189, 207);
+    --headerbg: rgb(184, 189, 207);
     --g7: linear-gradient(rgb(114, 122, 155), rgb(115, 124, 171));
     --g1: linear-gradient(rgba(196, 201, 226, 0.5), transparent);
     --s1: #828aa8;
