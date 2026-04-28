@@ -16,7 +16,7 @@ const Button = ({icon, href, theme, onclick, children, additionalClassName, mark
 
   const Inner = ()=> (
     <>
-        <span className={clsx("relative flex items-center min-h-[60px] max-md:min-h-[55px] max-sm:min-h-[50px] px-4 max-sm:px-3 g4 rounded-2xl inner-before overflow-hidden", theme && theme("group-hover:before:opacity-100", "group-hover:before:opacity-0 group-hover:g7"))}>
+        <span className={clsx("relative flex items-center min-h-[52px] max-sm:min-h-[50px] px-4 max-sm:px-3 g4 rounded-2xl inner-before overflow-hidden", theme && theme("group-hover:before:opacity-100", "group-hover:before:opacity-0 group-hover:g7"))}>
             <span className="absolute -left-[1px] max-sm:hidden"><Marker fill={markerFill}/></span>
             {icon && (
                 <img src={icon as string} alt="button-icon" className="size-10 max-sm:size-7 mr-5 max-lg:mr-3 max-sm:mr-2 object-contain z-10 "/>

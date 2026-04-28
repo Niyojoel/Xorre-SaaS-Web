@@ -17,14 +17,14 @@ const Pricing = ({themeStyle, theme}: PricingProps) => {
     <section>
       <Element name='pricing'>
         <div className="container relative z-2">
-          <div className={clsx("max-w-960 pricing-head_before relative mx-auto border-l border-r bg-s1/0 py-32 max-xl:max-w-4xl max-lg:border-none max-md:py-22 flex flex-col items-center", themeStyle("border-s2","border-s2 border-opacity-20"))}>
+          <div className={clsx("max-w-960 pricing-head_before relative mx-auto bg-s1/0 py-32 max-xl:max-w-4xl max-lg:border-none max-md:py-22 flex flex-col items-center", themeStyle("border-s2","border-s2 border-opacity-20"))}>
             <h3 className='h3 max-lg:h4 max-md:h5 z-10 relative mx-auto mb-16 xl:max-w-[650px] max-w-lg text-center text-[var(--p4)] max-md:mb-11 max-sm:max-w-sm'>
               Flexible Pricing for teams of all sizes
             </h3>
-            <div className={clsx("relative z-4 mx-auto flex w-[375px] max-md:w-[300px] max-sm:w-[80%] rounded-3xl border-[3px] border-s4/25 p-2 max-md:p-1 backdrop-blur-[6px] max-md:mb-11 max-sm:max-w-sm", themeStyle("bg-s1/50", "bg-s1/20"))}>
+            <div className={clsx("relative z-4 mx-auto flex w-[372px] max-md:w-[300px] max-sm:w-[80%] rounded-3xl border-[2px] border-s4/25 p-2 max-md:p-1 backdrop-blur-[6px] max-md:mb-11 max-sm:max-w-sm", themeStyle("bg-s1/50", "bg-s1/20"))}>
                 <button className={clsx("pricing-head_btn", monthly && 'text-[var(--p4)]')} onClick={() => setMonthly(true)}>Monthly</button>
                 <button  className={clsx("pricing-head_btn", !monthly && 'text-[var(--p4)]')} onClick={() => setMonthly(false)}>Annual</button>
-                <div className={clsx('g4 rounded-14 before:h-100 pricing-head_btn_before absolute left-2 top-2 h-[calc(100%-16px)] w-[calc(50%-8px)] overflow-hidden shadow-400 transition-transform duration-500', !monthly && 'translate-x-full')}/>
+                <div className={clsx('g4 rounded-[17px] before:h-100 absolute left-1.5 top-1 h-[calc(100%-9px)] w-[calc(50%-8px)] overflow-hidden shadow-400 transition-transform duration-500', !monthly && 'translate-x-full')}/>
             </div>
               <div className="pricing-bg">
                   <img src="/images/bg-outlines.svg" width={960} height={380} alt="outline"  className='relative z-2'/>

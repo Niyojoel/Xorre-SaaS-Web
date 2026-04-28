@@ -35,9 +35,9 @@ const FaqItem = ({item, index, theme}: FaqItemsProps) => {
                 <div className="body-3 px-7 py-3.5 text-p4">{item.answer}</div>
             )}
         </SlideDown>
-        <div className={clsx("g5 absolute -bottom-7 -top-7 left-0 right-0 -z-1 rounded-3xl opacity-0 transition-opacity duration-500", active && "opacity-100")}>
+        <div className={clsx("g5 absolute top-0 left-0 right-0 -z-1 rounded-3xl opacity-100 transition duration-300 delay-200", active && "-bottom-7 -top-7")}>
             <div className="g4 absolute inset-0.5 -z-1 rounded-3xl"/>
-            <div className="absolute left-8 top-0 h-0.5 w-40 bg-p1"/>
+            <div className={clsx("absolute left-8 top-0 h-0.5 w-40 bg-p1 opacity-0", active && "opacity-100")}/>
         </div>
     </div>
   )
