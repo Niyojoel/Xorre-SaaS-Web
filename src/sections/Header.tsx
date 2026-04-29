@@ -33,10 +33,11 @@ const Header = ({themeMode, toggleThemeMode}: HeaderProps) => {
   )
 
   return (
-    <header className={clsx("fixed top-0 left-0 z-50 w-full py-10 transition-all duration-300 max-lg:py-4", hasScrolled && "headerbg py-2 backdrop-blur-[8px]")}>
+    <header className={clsx("fixed top-0 left-0 z-50 w-full py-10 transition-all duration-300 max-lg:py-4", hasScrolled && "py-2 backdrop-blur-[8px]")}>
       <div className="container flex h-14 items-center max-lg:px-5">
-        <a className="lg:hidden flex-1 cursor-pointer z-2">
+        <a className="lg:hidden flex-1 cursor-pointer z-2 inline-flex items-center">
           <img src="/images/xorre.svg" alt="logo" width={115} height={55}/>
+          <span className={clsx("mt-[0.06rem] ml-[-18px] z-2 font-bold text-[1.47rem] text-[#eaedff]", isOpen ? "bg-s2" : hasScrolled ? "transparent" : "logo_text_bg")}>RE</span>
         </a>
 
         <div className={clsx("w-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:bg-s2 max-lg:opacity-0", isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none")}>
@@ -49,8 +50,11 @@ const Header = ({themeMode, toggleThemeMode}: HeaderProps) => {
                   <NavLink title="pricing"/>
                 </li>                
                 <li className="nav-logo">
-                  <LinkScroll to="hero" offset={-250} spy smooth className="max-lg:hidden transition-transform  duration-500 cursor-pointer">
-                    <img src="/images/xorre.svg" width={160} height={55} alt="logo"/>
+                  <LinkScroll to="hero" offset={-250} spy smooth className="max-lg:hidden transition-transform duration-500 cursor-pointer">
+                    <span className="inline-flex items-center">
+                      <img src="/images/xorre.svg" width={160} height={55} alt="logo"/>
+                      <span className={clsx("mt-[0.15rem] ml-[-26px] z-2 font-bold text-[2.0rem] tracking-tighter text-[#eaedff]", isOpen ? "bg-s2" : hasScrolled ? "transparent" : "logo_text_bg_w_full")}>RE</span>
+                    </span>
                   </LinkScroll>
                 </li>   
                 <li className="nav-li">
@@ -72,7 +76,6 @@ const Header = ({themeMode, toggleThemeMode}: HeaderProps) => {
         <button data-theme-toggle aria-label="Toggle theme" onClick={toggleThemeMode} className=" flex items-center justify-center lg:ml-20 ml-5 border-3 border-p2 size-10 rounded-full">
           {themeMode === "light" ? <MoonIcon stroke="#2ef2ff" size={23} fill="black"/> : <SunDimIcon stroke="#2ef2ff" fill="white" size={30}/>}
         </button>
-        
       </div>
     </header>
   )

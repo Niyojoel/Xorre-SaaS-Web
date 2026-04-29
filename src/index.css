@@ -7,6 +7,7 @@
 @layer base {
   :root {
     --htmlBcg: rgb(8, 13, 39);
+    --logoText: rgb(8, 13, 39);
     --headerbg: rgb(0, 0, 0);
     --g7: linear-gradient(#1b275a, #0e1434);
     --g1: linear-gradient(rgba(196, 203, 245, 0.5), transparent);
@@ -23,6 +24,7 @@
 
   [data-theme="light"] {
     --htmlBcg: rgb(184, 189, 207);
+    --logoText: linear-gradient(to top, rgb(170, 174, 189), rgb(180, 184, 201));
     --headerbg: rgb(184, 189, 207);
     --g7: linear-gradient(rgb(114, 122, 155), rgb(115, 124, 171));
     --g1: linear-gradient(rgba(196, 201, 226, 0.5), transparent);
@@ -190,8 +192,13 @@
 
   .video_backdrop {
     background: rgba(38, 52, 102, 0.8);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px) saturate(80%);
   }
+
+  /* .logo_text_on_scroll {
+    background: var(--htmlBcg);
+    backdrop-filter: blur(50px);
+  } */
 
   .caption {
     @apply small-2 mb-5 uppercase text-[var(--p3)];
@@ -212,6 +219,14 @@
   /* START of Header */
   .headerbg {
     background-color: var(--headerbg);
+  }
+
+  .logo_text_bg {
+    background-color: var(--htmlBcg);
+  }
+
+  .logo_text_bg_w_full {
+    background: var(--logoText);
   }
   .nav-active {
     @apply text-p3;
